@@ -15,7 +15,7 @@ const soursemaps	= require('gulp-sourcemaps');
 
 // FILE PATH
 const _scripts_path = 'src/js/**/*.js';
-const _HTML_path 	= 'src/index.html';
+const _HTML_path 	= 'src/*.html';
 const _sass_path	= 'src/scss/**/*.scss'
 const _dist_path	= 'dist/'			
 
@@ -64,7 +64,6 @@ gulp.task('scripts', () => {
 		.pipe(uglify().on('error', (e) => {
 			console.log(e)
 		}))
-		.pipe(concat('main.js'))
 		.pipe(soursemaps.write())
 		.pipe(gulp.dest('dist/js'))
 		.pipe(livereload())
