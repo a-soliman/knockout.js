@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<h1>Users List</h1>
+	<ul data-bind="foreach: userArray2">
+		<li>
+			<span data-bind="text: $data.firstName"></span>
+			<span data-bind="text: $data.lastName"></span>
+		</li>
+	</ul>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+	<script src="./js/2.js"></script>
+</body>
+</html>
