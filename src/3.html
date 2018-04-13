@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello</title>
+	<!-- Minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	
+	<div class="container">
+		<table class="table table-striped" >
+		<thead>
+			<tr>
+				<td>Index</td>
+				<td>Name</td>
+				<td>Delete</td>
+			</tr>
+		</thead>
+		<tbody data-bind="foreach: users">
+			<tr >
+				<td data-bind="text: $index"></td>
+				<td data-bind="text: $data.name"></td>
+				<td>
+					<button 
+					class="btn btn-xs btn-danger" data-bind="click: $parent.removeUser"
+					>X</button></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<input type="text" id="newUser">
+	<button class="btn btn-primary" data-bind="click: addUser">Add User</button>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+	<script src="./js/3.js"></script>
+</body>
+</html>
