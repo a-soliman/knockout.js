@@ -15,12 +15,21 @@
 
 	<form>
 		<div class="form-control">
-			<label for="firstname"></label>
-			<input type="text" data-bind="value: firstname">
+			<label for="firstname">Firstname</label>
+			<input 
+				type="text" 
+				data-bind="value: firstname, 
+				valueUpdate: 'afterkeydown'"
+			>
+
 		</div>
 		<div class="form-control">
-			<label for="lastname"></label>
-			<input type="text" data-bind="value: lastname">
+			<label for="lastname">Lastname</label>
+			<input 
+				type="text" 
+				data-bind="value: lastname,
+				valueUpdate: 'afterkeydown'"
+				>
 		</div>
 	</form>
 	<button onclick="change()">Change</button>
