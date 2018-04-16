@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HTML | CSS | Style Binding</title>
+	<title>forEach</title>
 	<!-- Minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -9,13 +9,28 @@
 </head>
 <body>
 	<div class="container">
-		<a data-bind="attr: {href: url, title: details, target: target}">About us</a>
-
+		
+		<table class="table table-strip">
+			<thead>
+				<tr>
+					<td>EMPLOYEE ID</td>
+					<td>EMPLOYEE NAME</td>
+				</tr>
+			</thead>
+			<tbody data-bind="foreach: empoloyees">
+				<tr>
+					<td> <span data-bind="text: id"></span></td>
+					<td>
+						<span data-bind="text: name"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 
 
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-	<script src="./js/7.js"></script>
+	<script src="./js/8.js"></script>
 </body>
 </html>
