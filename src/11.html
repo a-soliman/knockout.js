@@ -9,14 +9,21 @@
 </head>
 <body>
 	<div class="container">
-		<span data-bind="text: submitMessage"></span>
-		<form data-bind="submit: fireSubmit" class="form">
-			<div class="form-group">
-				<label for="name">Name:</label>
-				<input type="text" class="form-control" data-bind="value: name">
-			</div>
-			<button class="btn btn-default" type="submit" data-bind="diable: valid">Submit</button>
-		</form>
+		<ul data-bind="template: {name: 'categoryTemplate', foreach: categories, as: 'category'}"></ul>
+
+
+	<script type="text/html" id="categoryTemplate">
+		<li>
+			<strong data-bind="text: name"></strong>
+			<ul data-bind="template: {name: 'subcategoryTemplate', foreach: subcategories, as: subcategory}"></ul>
+		</li>
+	</script>
+
+	<script type="text/html" id="subcategoryTemplate">
+		<li><!-- <a data-bind="attr: {href: subcategory}">
+			<span data-bind="text: subcategory"></span>
+		</a> --></li>
+	</script>
 
 
 	</div>

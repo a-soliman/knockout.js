@@ -1,19 +1,26 @@
-function viewModel(){
-	self = this;
+let viewModel = {
 
-	self.name = ko.observable()
-	self.submitMessage = ko.observable('Not submited')
-	self.fireSubmit = function() {
-		self.submitMessage('form submited');
-	}
-
-	self.valid = function(){
-		if ( self.name() == '' ) {
-			return false;
-		}
-		return true;
-	}
-
+	categories: ko.observableArray([
+			{
+				name: 'Technology',
+				subcategories: [
+					'Progamming', 'Hardware', 'Web Development'
+				]
+			},
+			{
+				name: 'Business',
+				subcategories: [
+					'Finance', 'Marketing', 'Stocks'
+				]
+			},
+			{
+				name: 'Food',
+				subcategories: [
+					'Restaurants', 'Catering', 'Market'
+				]
+			}
+		])
 }
 
-ko.applyBindings(new viewModel)
+//Apply the bindings
+ko.applyBindings(viewModel)
