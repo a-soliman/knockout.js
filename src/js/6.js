@@ -4,5 +4,5 @@ let viewModel = {
 }
 
 viewModel.htmlString('<b>Ahmed</b> is modifing this <i>KnockOut</i> thing.');
-viewModel.amount(90)
+viewModel.amount(5)
 ko.applyBindings(viewModel)
