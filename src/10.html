@@ -9,18 +9,19 @@
 </head>
 <body>
 	<div class="container">
-		<h4>hey <span data-bind="text: name"></span>!</h4>
-		<form class="form">
-			<div class="control-group">
-				<input type="text" class="form-control" data-bind="value: name, valueUpdate: 'afterkeydown'">
+		<span data-bind="text: submitMessage"></span>
+		<form data-bind="submit: fireSubmit" class="form">
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" class="form-control" data-bind="value: name">
 			</div>
+			<button class="btn btn-default" type="submit" data-bind="diable: valid">Submit</button>
 		</form>
-
 
 
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-	<script src="./js/9.js"></script>
+	<script src="./js/10.js"></script>
 </body>
 </html>
