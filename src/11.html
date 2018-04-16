@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HTML | CSS | Style Binding</title>
+	<title>Template binding</title>
 	<!-- Minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -9,13 +9,19 @@
 </head>
 <body>
 	<div class="container">
-		<a data-bind="attr: {href: url, title: details, target: target}">About us</a>
-
+		<span data-bind="text: submitMessage"></span>
+		<form data-bind="submit: fireSubmit" class="form">
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" class="form-control" data-bind="value: name">
+			</div>
+			<button class="btn btn-default" type="submit" data-bind="diable: valid">Submit</button>
+		</form>
 
 
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-	<script src="./js/7.js"></script>
+	<script src="./js/11.js"></script>
 </body>
 </html>
