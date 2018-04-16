@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>forEach</title>
+	<title>click & event binding</title>
 	<!-- Minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -18,10 +18,15 @@
 				</tr>
 			</thead>
 			<tbody data-bind="foreach: empoloyees">
-				<tr>
-					<td> <span data-bind="text: id"></span></td>
+				<tr data-bind="if: id">
+					<td> 
+						<span data-bind="text: id"></span>
+					</td>
 					<td>
 						<span data-bind="text: name"></span>
+					</td>
+					<td>
+						<button class="btn-xs btn-danger" data-bind="click: $parent.removeEmployee">X</button>
 					</td>
 				</tr>
 			</tbody>

@@ -1,4 +1,7 @@
-let empoloyees = ko.observableArray([
+function viewModel() {
+	self = this
+
+	self.empoloyees = ko.observableArray([
 		{
 			id: 'e100',
 			name: 'Tom Jackson'
@@ -8,10 +11,15 @@ let empoloyees = ko.observableArray([
 			name: 'Jane Hopson'
 		},
 		{
-			id: 'e102',
+			id: null,
 			name: 'Mike Rechardson'
 		},
-	])
+	]);
 
+	self.removeEmployee = function() {
+		let index = self.empoloyees.indexOf(this);
+		self.empoloyees.splice(index, 1)
+	}
+}
 
-ko.applyBindings()
+ko.applyBindings(new viewModel)
